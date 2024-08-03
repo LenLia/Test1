@@ -1,0 +1,39 @@
+
+.NavBar{
+    display: flex;
+    height: 90px;
+    padding-top: 20px;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+
+    
+}
+
+.foodie{
+    font: 700 24px Inter, sans-serif;
+    color: #000;
+    margin-left: 20px;
+}
+
+.buttons-1{
+    align-self: center;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+}
+
+
+.buttons-2{
+    display: flex;
+    align-self: stretch;
+    
+    
+    .button-2{
+        font: 700 24px Inter, sans-serif; 
+        font-size: 19px;
+        font-weight: 500;
+        text-decoration: none;
+        margin-right: 26px;
+        color: #000;
+    }
+}
