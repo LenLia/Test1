@@ -1,0 +1,21 @@
+<div class="container-1">
+    <div class="head">
+      <h1>Панель администрирования</h1>
+      <div class="tabs">
+        <a class="change" [ngClass]="{ active: panel === 'users' }" routerLink="users"
+          (click)="changePanel('users')"
+        >
+          Управление пользователями
+        </a>
+        <a class="change" [ngClass]="{ active: panel === 'recipes' }" routerLink="recipes"
+          (click)="changePanel('recipes')"
+        >
+          Управление рецептами
+        </a>
+      </div>
+    </div>
+  
+    <div class="panel">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

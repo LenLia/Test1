@@ -1,0 +1,36 @@
+<div class="form-signin">
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <div class="container-1">
+      <h3 class="head">Войдите в ваш аккаунт</h3>
+      <div class="container-2">
+        <div class="mb-3">
+          <label class="label">Логин</label>
+          <input type="username" class="form-control" formControlName="username" placeholder="Username"
+            [ngClass]="{'is-invalid': submitted && f['username'].errors}" required />
+        </div>
+        <div class="mb-3">
+          <label class="label">Пароль</label>
+          <input minlength="4" type="password" class="form-control" formControlName="password" placeholder="Password"
+          [ngClass]="{'is-invalid': submitted && f['password'].errors}"  required/>
+        </div>
+        <div class="block">
+          <div class="sessia">Быстрая сессия</div>
+          <div class="registr" routerLink="/registration">Зарегистрироваться</div>
+        </div>
+        <div class="d-grid">
+          <button [disabled]="signInForm.invalid && submitted" type="submit" class="btn">Вход</button>
+        </div>
+        <div class="box-text">
+          <div class="line"></div>
+          <div class="text-1"> Или войти через</div>
+          <div class="line"></div>
+        </div>
+        <div class="box-btn">
+          <div class="btn-1"></div>
+          <img src="assets/img/Icon.png" alt="img">
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

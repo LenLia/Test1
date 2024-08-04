@@ -1,0 +1,22 @@
+<div class="table">
+    <div class="head">
+        <div class="column">НАЗВАНИЕ РЕЦЕПТА</div>
+        <div class="column">КРАТКОЕ ОПИСАНИЕ</div>
+        <div class="column">ID РЕЦЕПТА</div>
+        <div class="column">КАТЕГОРИЯ</div>
+    </div>
+    <div class="container" *ngFor="let rec of recipes">
+        <div class="box-rec">
+
+            <div class="rec">
+                <div class="name">{{rec.body}}</div>
+                <div class="opisanie">{{rec.title}}</div>
+                <div class="ID">{{rec.id}}</div>
+                <div class="categ">{{rec.tags}}</div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="edit"></div>
+</div>

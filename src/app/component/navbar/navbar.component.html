@@ -1,0 +1,192 @@
+<div class="NavBar">
+    <div class="foodie">Foodie</div>
+    <div class="buttons-2">
+        <a class="button-2" routerLink="/">Главная</a>
+        <a class="button-2" routerLink="/recipes"> Каталог рецептов</a>
+    </div>
+    <button class="btn" *ngIf="!loginService.isLogged" routerLink="/authorization">Вход в аккаунт</button>
+    <div class="user" *ngIf="loginService.isLogged">
+        <img class="img" routerLink="/create-recipe" src="assets/img/streamline_intedit.png" alt="img">
+        
+
+   <button mat-button [matMenuTriggerFor]="menu">
+    <div class="box-text">
+
+        <div class="text"> {{loginService.userValue?.lastName}} {{loginService.userValue?.firstName}}</div>
+        <span class="text-2">{{loginService.userValue?.role}}</span>
+    </div>
+   </button>
+   <mat-toolbar>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <span >
+                Вы вошли как:<br>
+                <strong>{{ loginService.userValue?.username }}</strong>
+            </span>
+        </button>
+        <button mat-menu-item (click)="getSetting()">Настройки аккаунта</button>
+        <button mat-menu-item *ngIf="loginService.userValue?.role === 'admin'"
+            routerLink="/admin">Администрирование</button>
+        <button mat-menu-item (click)="loginService.logout()">Выход</button>
+    </mat-menu>
+</mat-toolbar>
+</div>
+
+
+</div>
+
+
+
+<!-- <div class="nav-bar-авторизованный">
+    <div class="div">
+        <div class="div-2">
+            <div class="foodie">Foodie</div>
+            <div class="div-3">
+                <div>Главная</div>
+                <div class="каталог-рецептов">Каталог рецептов</div>
+            </div>
+            <div class="div-4">
+                <img loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2ef0db52eae05387616b0af97185648559357adae8e98927881a2a348bf281d?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c"
+                    class="img" />
+                <div class="div-5">
+                    <img loading="lazy"
+                        srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/fe043609a8edb2ae54fb3d57dc4d8b471745e5cbe9d3d62a913e440c2759330b?apiKey=7be18409a7c349d885b4891d26c8a25c&&apiKey=7be18409a7c349d885b4891d26c8a25c"
+                        class="img-2" />
+                    <div class="div-6">
+                        <div class="ivanov-ivan">Ivanov Ivan</div>
+                        <div class="пользователь">Пользователь</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-7"></div>
+    </div>
+</div>
+<style>
+    .nav-bar-авторизованный {
+        display: flex;
+        flex-direction: column;
+        font-family: Inter, sans-serif;
+    }
+
+    .div {
+        background-color: rgba(255, 255, 255, 1);
+        display: flex;
+        width: 100%;
+        padding-top: 34px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div {
+            max-width: 100%;
+        }
+    }
+
+    .div-2 {
+        align-self: center;
+        display: flex;
+        width: 100%;
+        max-width: 1260px;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+        .div-2 {
+            max-width: 100%;
+        }
+    }
+
+    .foodie {
+        color: rgba(0, 0, 0, 1);
+        font-size: 24px;
+        font-weight: 700;
+        align-self: stretch;
+        margin: auto 0;
+    }
+
+    .div-3 {
+        align-self: stretch;
+        display: flex;
+        gap: 20px 42px;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 1);
+        font-weight: 500;
+        letter-spacing: -0.32px;
+        margin: auto 0;
+    }
+
+    .каталог-рецептов {
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+
+    .div-4 {
+        align-self: stretch;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .img {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 25px;
+        margin: auto 0;
+    }
+
+    .div-5 {
+        display: flex;
+        gap: 17px;
+    }
+
+    .img-2 {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 41px;
+        border-radius: 50%;
+    }
+
+    .div-6 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ivanov-ivan {
+        color: rgba(0, 0, 0, 1);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    @media (max-width: 991px) {
+        .ivanov-ivan {
+            margin-right: 6px;
+        }
+    }
+
+    .пользователь {
+        color: rgba(144, 144, 144, 1);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 2;
+    }
+
+    .div-7 {
+        min-height: 1px;
+        margin-top: 34px;
+        width: 100%;
+    }
+
+    @media (max-width: 991px) {
+        .div-7 {
+            max-width: 100%;
+        }
+    }
+</style> -->

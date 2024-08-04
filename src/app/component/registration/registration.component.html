@@ -1,0 +1,37 @@
+<div class="form-signin">
+    <form [formGroup]="registrForm" (ngSubmit)="onSubmit()">
+      <div class="container-1">
+        <h3 class="head">Зарегистрируйте ваш аккаунт</h3>
+        <div class="container-2">
+          <div class="mb-3">
+            <label class="label">Логин</label>
+            <input type="username" class="form-control" formControlName="username" 
+              [ngClass]="{'is-invalid': submitted1 && f['username'].errors}" required />
+          </div>
+          <div class="mb-3">
+            <label class="label">Пароль</label>
+            <input minlength="4" type="password" class="form-control" formControlName="password"  />
+          </div>
+          <div class="mb-3">
+            <label class="label">Имя</label>
+            <input type="firstName" class="form-control" formControlName="firstName"  />
+          </div>
+          <div class="mb-3">
+            <label class="label">Фамилия</label>
+            <input type="lastName" class="form-control" formControlName="lastName"  />
+          </div>
+          <div class="mb-3">
+            <label class="label">Отчество (при наличие)</label>
+            <input type="middleName" class="form-control" formControlName="middleName" />
+          </div>
+          <div class="d-grid">
+            <button [disabled]="registrForm.invalid && submitted1" type="submit" class="btn" >Зарегистрироваться</button>
+          </div>
+          <div class="box-text">
+
+          </div>
+        </div>
+  
+      </div>
+    </form>
+  </div>

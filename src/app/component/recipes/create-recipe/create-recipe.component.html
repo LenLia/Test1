@@ -1,0 +1,98 @@
+<div class="form-signin">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+
+        <h3 class="head">Cоздание рецепта</h3>
+        <div class="container-1">
+            <h3 class="head-1">Основная информация</h3>
+
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">body</label>
+                <input type="body" class="form-control" formControlName="body" required>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">title</label>
+                <input maxlength="255" type="title" class="form-control" formControlName="title" required />
+            </div>
+
+        </div>
+        <hr  width="100%" size="1" color="#dddddd" />
+        <div class="container-1">
+            <h3 class="head-1">Дополнительная информация</h3>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">tags</label>
+                <input type="tags" class="form-control" formControlName="tags" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">timeCooking</label>
+                <input type="timeCooking" class="form-control" formControlName="timeCooking" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">calories</label>
+                <input type="calories" class="form-control" formControlName="calories" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">fats</label>
+                <input type="fats" class="form-control" formControlName="fats" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">carbohydrates</label>
+                <input type="carbohydrates" class="form-control" formControlName="carbohydrates" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">proteins</label>
+                <input type="proteins" class="form-control" formControlName="proteins" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">calories</label>
+                <input type="calories" class="form-control" formControlName="calories" required/>
+            </div>
+        </div>
+        <hr  width="100%" size="1" color="#dddddd" />
+        <div class="container-1">
+            <h3 class="head-1">Детальная информация</h3>
+
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">title</label>
+                <input type="title" class="form-control" formControlName="title" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">description</label>
+                <input type="description" class="form-control" formControlName="description" required/>
+            </div>
+        </div>
+        <hr  width="100%" size="1" color="#dddddd" />
+        <div class="container-4">
+            <h3 class="head-1">Ингредиенты</h3>
+
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">title</label>
+                <input type="title" class="form-control" formControlName="title" required/>
+            </div>
+            <hr  width="100%" size="1" color="#dddddd" />
+            <div class="mb-3">
+                <label class="label">description</label>
+                <input type="description" class="form-control" formControlName="description" required/>
+            </div>
+        </div>
+        <hr  width="100%" size="1" color="#dddddd" />
+        <div class="d-grid">
+            <button type="submit" class="btn">Отправить рецепт</button>
+        </div>
+        <div class="box-text">
+
+        </div>
+
+    </form>
+</div>

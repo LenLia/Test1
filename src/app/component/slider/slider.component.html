@@ -1,0 +1,34 @@
+<ngx-flicking [options]="{ circular: true }" >
+<!-- [plugins]="plugins"> -->
+    <div class="conteiner-1" flicking-panel *ngFor="let recipe of recipes">
+        <div class="column">
+            <div class="box-text-1">
+                <div class="text-1">{{recipe.title}}</div>
+                <div class="text-2">{{recipe.body}}</div>
+                <div class="button-1">
+                    <div class="box-buton-1">
+                        <div class="text-3">{{recipe.timeCooking}} Минут</div>
+                        <div class="text-3">{{recipe.tags}}</div>
+                    </div>
+                    <div class="box-buton-2">
+                        <div class="author">
+                            <p>{{recipe.author.firstName}} {{recipe.author.lastName}}</p>
+                        </div>
+                        <button class="but" [routerLink]="['recipes', recipe.id]">fssf</button>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="box-text-2">
+                <span in-viewport class="flicking-arrow-prev"></span>
+                <span in-viewport class="flicking-arrow-next"></span>
+
+                <img class="img" [src]="recipe.image" alt="ertty">
+            </div>
+        </div>
+    </div>
+</ngx-flicking>
+
+
+
