@@ -15,7 +15,6 @@ export class OneRecipeComponent implements OnInit{
   ngOnInit() {
     this.apiService.getPostsAll().subscribe({
       next: (res) => {
-        console.log(res)
         this.recipes = res;
       },
       error: (err: HttpErrorResponse) =>

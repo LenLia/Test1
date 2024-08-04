@@ -22,12 +22,8 @@ export class LoggingInterceptor implements HttpInterceptor {
 
     if(isLoggedIn){
     const cloned=request.clone({setHeaders: {Authorization: `Bearer ${user.jwtToken}`}})
-    console.log(user?.jwtToken)
-    
-     console.log(cloned)
      return next.handle(cloned);
   } else{
-    console.log(request)
     return next.handle(request);
   }
   }

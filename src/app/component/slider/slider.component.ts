@@ -17,7 +17,6 @@ export class SliderComponent implements OnInit{
   ngOnInit(){
     this.apiService.getPostsAll().subscribe({
       next: (res) =>{
-        console.log(res)
         this.recipes = res;
       },
       error: (err: HttpErrorResponse) =>

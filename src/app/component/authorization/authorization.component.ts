@@ -55,7 +55,6 @@ export class AuthorizationComponent implements OnInit {
         error: (err: HttpErrorResponse) =>
           console.log('Error!!!!!')
       })
-      console.log(this.loginService.userValue)
   }
 
 
